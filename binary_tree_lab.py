@@ -16,14 +16,11 @@ def max_depth(root: Optional[TreeNode]) -> int:
 
 # TODO: Implement the lowest_common_ancestor function
 def lowest_common_ancestor(root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
-    # print(f"Visiting {root.val if root else 'None'}")
     if root is None or root == p or root == q:
-        # print(f"Found {root.val if root else 'None'}")
         return root
     left = lowest_common_ancestor(root.left, p, q)
     right = lowest_common_ancestor(root.right, p, q)
     if left is not None and right is not None:
-        # print(f"LCA found at {root.val}")
         return root
     return left if left is not None else right
 
